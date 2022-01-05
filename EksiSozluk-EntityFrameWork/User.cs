@@ -14,7 +14,7 @@ namespace EksiSozluk_EntityFrameWork
         public string eMail { get; set; }
         public int password { get; set; }
         public DateTime birtDay { get; set; }
-        public string gender { get; set; }
+        public Gender Gender { get; set; }
 
     }
 }

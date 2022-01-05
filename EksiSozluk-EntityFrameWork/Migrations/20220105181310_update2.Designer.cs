@@ -4,14 +4,16 @@ using EksiSozluk_EntityFrameWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EksiSozluk_EntityFrameWork.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    partial class AppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220105181310_update2")]
+    partial class update2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -139,7 +141,10 @@ namespace EksiSozluk_EntityFrameWork.Migrations
                     b.Property<string>("eMail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("genderID")
+                    b.Property<string>("genderID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("genderID1")
                         .HasColumnType("int");
 
                     b.Property<int>("password")
@@ -150,7 +155,7 @@ namespace EksiSozluk_EntityFrameWork.Migrations
 
                     b.HasKey("userID");
 
-                    b.HasIndex("genderID");
+                    b.HasIndex("genderID1");
 
                     b.ToTable("Users");
                 });
@@ -226,7 +231,7 @@ namespace EksiSozluk_EntityFrameWork.Migrations
                 {
                     b.HasOne("EksiSozluk_EntityFrameWork.Gender", "Gender")
                         .WithMany("Users")
-                        .HasForeignKey("genderID");
+                        .HasForeignKey("genderID1");
 
                     b.Navigation("Gender");
                 });
