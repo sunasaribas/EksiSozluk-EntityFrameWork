@@ -9,12 +9,10 @@ namespace EksiSozluk_EntityFrameWork
     public class User
     {
 
-        public int userID { get; set; }
+        public int ID { get; set; }
         public string userName { get; set; }
-        public string eMail { get; set; }
         public int password { get; set; }
-        public DateTime birtDay { get; set; }
-        public Gender Gender { get; set; }
+        public List<Entry> Entries  { get; set; }
 
     }
 }

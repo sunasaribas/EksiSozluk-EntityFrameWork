@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace EksiSozluk_EntityFrameWork
 {
-    public class Debe
+    public class Categories
     {
+
         public int ID { get; set; }
-        public string Entries { get; set; }
-        public int userID { get; set; }
-        public DateTime Date { get; set; }
-        public User User { get; set; }
+
+        public string Name { get; set; }
+
+        public string Description { get; set; }
+
+        public List<Entry> Entries { get; set; }
     }
 }

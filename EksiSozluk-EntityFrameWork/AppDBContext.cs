@@ -20,6 +20,6 @@ namespace EksiSozluk_EntityFrameWork
         public DbSet<Sorunsallar> Sorunsallars { get; set; }
         public DbSet<Spor> Spors { get; set; }
         public DbSet<İliskiler> İliskilers { get; set; }
-        public DbSet<Gender> Genders { get; set; }
+        public DbSet<Entry> Genders { get; set; }
     }
 }
